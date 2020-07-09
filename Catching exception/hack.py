@@ -70,7 +70,9 @@ def main():
     with socket.socket() as my_socket:
         address = (ip_address, port)
         my_socket.connect(address)
-        catching_exception_attack(my_socket)
+
+        if not catching_exception_attack(my_socket):
+            print('\nNo password found!')
 
 
 if __name__ == '__main__':

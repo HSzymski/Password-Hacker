@@ -44,7 +44,8 @@ def main():
         address = (ip_address, port)
         my_socket.connect(address)
 
-        dictionary_attack(my_socket)
+        if not dictionary_attack(my_socket):
+            print('\nNo password found!')
 
 
 if __name__ == '__main__':
